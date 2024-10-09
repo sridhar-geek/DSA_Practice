@@ -46,3 +46,23 @@ const removeDuplicates = (nums) => {
     return  j+1
 }
 // console.log(removeDuplicates(nums))
+
+/** Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements. */
+
+// const nums = [0,1,1,0,3,12,4,0]
+const moveZerosToEnd = (nums) => {
+    let j = 0;
+    for (let i = 1; i < nums.length; i++) {
+      if (nums[j] == 0) {
+        if (nums[i] !== 0) {
+          [nums[j], nums[i]] = [nums[i], nums[j]];
+          j++;
+        }
+      } else {
+        j++;
+      }
+    }
+    return nums
+}
+// console.log(moveZerosToEnd(nums))
+
